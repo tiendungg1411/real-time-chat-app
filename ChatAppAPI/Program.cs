@@ -1,3 +1,4 @@
+using ChatAppAPI.DataService;
 using ChatAppAPI.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ builder.Services.AddCors(opt =>
         .AllowCredentials();
     });
 });
+builder.Services.AddSingleton<ShareDb>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
